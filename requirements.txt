@@ -1,0 +1,10 @@
+flask
+Flask-SQLAlchemy
+Flask-Script
+psycopg2
+flask-migrate
+flask-wtf
+wtforms
+flask-admin
+flask-security
+bcrypt

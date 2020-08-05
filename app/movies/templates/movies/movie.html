@@ -1,0 +1,100 @@
+{%extends 'base.html'%}
+{%block body%}
+<div class="container">
+    <section class="movie">
+        <div class="background__movie"><img src="{{movie.img}}" alt="" class="movie__back">
+
+            <button class="play__btn"> </button>
+        </div>
+    </section>
+
+
+    <section class="movie__info">
+        <nav class="movie__info__navigator">
+            <ul>
+
+                <li><a id="descr-btn">Description</a></li>
+
+                <li><a id="cast-btn">Cast</a></li>
+
+                <li><a id="thrl-btn">Trailers</a></li>
+
+                <li><a id="photo-btn">Photos</a></li>
+
+            </ul>
+        </nav>
+        <div class="movie__info__info">
+            <div class="movie__descr" id="descr">
+
+                <div class="genre">
+                    {%for genre in genres%}
+                    <span>
+
+                        <a href='{{url_for("movies.genre", slug=genre.slug)}}'>{{genre.title}}</a>
+                        </span>
+                        {%endfor%}<br>
+                </div>
+
+                <div class="ds"><span>
+                        {{movie.description}}</span>
+                </div>
+                <br>
+                <div>Taline:<span>
+                        &quot;{{movie.taline}}&quot;</span>
+                </div>
+                <div>Year: <span>{{movie.year}}</span></div>
+                <div>Country: <span>{{movie.country}}</span></div>
+                <div>World's premiere: <span>{{movie.premiere}}</span></div>
+                <div>Budget:
+                    <span>{{movie.budget}}</span>
+                </div>
+
+            </div>
+            <div class="movie__cast" id="cast">
+                <div class="slider__cast">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTc5NTMyMjIwMV5BMl5BanBnXkFtZTcwNTMyNjYwMw@@._V1_UY317_CR6,0,214,317_AL_.jpg"
+                        alt="" class="slide">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTM2MjIwOTc0Nl5BMl5BanBnXkFtZTcwNzQ5ODM1Mw@@._V1_UX214_CR0,0,214,317_AL_.jpg"
+                        alt="" class="slide">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTk1MTcyNTE3OV5BMl5BanBnXkFtZTcwMTA0MTMyMw@@._V1_UY317_CR12,0,214,317_AL_.jpg"
+                        alt="" class="slide">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMjE4NzYwNTc5Nl5BMl5BanBnXkFtZTcwMzQzOTUyNw@@._V1_UY317_CR9,0,214,317_AL_.jpg"
+                        alt="" class="slide">
+                    <img src="https://m.media-amazon.com/images/M/MV5BYThkMmY1OTYtMTZmNi00YTVmLThkMGItNDlhNzE0ZDZkNGQ0XkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_UY317_CR8,0,214,317_AL_.jpg"
+                        alt="" class="slide"></div>
+            </div>
+            <div class="movie__thrl" id="thrl">
+                <div></div>
+            </div>
+            <div class="movie__photos" id="photo">
+                <div></div>
+            </div>
+        </div>
+
+    </section>
+<br>
+<!--<h1>{{movie.title}}</h1>
+<dev>
+<span>
+    <h4>Genres:</h4>
+{%for genre in genres%}
+<h4><a href='{{url_for("movies.genre", slug=genre.slug)}}'>{{genre.title}}</a></h4>
+{%endfor%}
+</span>
+</div>
+
+<div>
+<img src="{{movie.img}}" alt="poster">
+</div>
+
+<h2>
+    Tagline: {{movie.tagline}}
+</h2>
+<div>
+    <h2>Description:</h2>
+    <p>
+    <h3>{{movie.description}}</h3>
+    </p>
+</div>-->
+
+{%endblock%}

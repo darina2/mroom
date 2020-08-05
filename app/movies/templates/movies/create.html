@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+{%block body%}
+
+<form action="{{url_for('movies.create')}}" method="post">
+
+    {%for field in form%}
+    <div class="">
+        {{field.label}}
+        {{field}}
+    </div>
+    {%endfor%}
+    <button type="submit" id="btn-create">create</button>
+</form>
+
+{%endblock%}
+
+{%block scripts%}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../../../static/js/jquery.fancybox.min.js"></script>
+<script src="../../../static/js/slick.min.js"></script>
+<script src="../../../static/js/main.js"></script>
+<script src="../../../static/js/create.js"></script>
+{%endblock%}
