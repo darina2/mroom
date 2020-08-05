@@ -1,0 +1,62 @@
+{%extends 'index.html'%}
+{%block body%}
+
+
+
+<div class="content">
+    <div class="container">
+        
+        <p class="list__category">All You Need Is Movie!</p>
+        
+        {% for movie in pages.items%}
+        <div class="movie__container">
+
+
+
+            <p class="poster__movie"><img src="{{movie.img}}" alt="" class="movie__poster">
+
+            <div class="movie__data">
+                <div class="title__movie">{{movie.title}}</div>
+
+                <div class="genre">{%for genre in movie.genres%}<span>
+                        <a href="genre/{{genre.slug}}" class="btn-watch -g">{{genre.title}}</a>
+
+
+                    </span> {%endfor%}
+                </div>
+                <div class="description__movie"><span>
+                        {{movie.description}}</span>
+                </div>
+
+                {%if movie.year%} <div>Year: <span>{{movie.year}}</span></div>{%endif%}
+                {%if movie.country%} <div>Country: <span>{{movie.country}}</span></div>{%endif%}
+
+            </div>
+            <a href="{{movie.slug}}" class="btn-watch">WATCH</a>
+            <a href="{{movie.slug}}/edit" class="m-edit">edit</a>
+            <a href="{{movie.slug}}/delete"class="m-delete" onclick="Delete(this)">delete</a>
+            <a href="{{movie.slug}}/upload"class="m-upload">upload</a>
+
+            </p>
+
+        </div>
+
+        {%endfor%}
+
+
+        <nav id="pagination">
+            <ul>
+                <li>
+                    <a href="./?page={{pages.prev_num}}"><img src="../../../static/img/pagl.png" alt=""><span
+                            aria-hidden="true" class="prev"> </span></a>
+                </li>
+                {%for page in pages.iter_pages()%}
+                <li><a href="./?page={{page}}">{{page}}</a></li>
+                {%endfor%}
+                <li>
+                    <a href="./?page={{pages.next_num}}"><img src="../../../static/img/pagr.png" alt=""><span
+                            aria-hidden="true" class="next"> </span></a>
+                </li>
+            </ul>
+        </nav>
+        {%endblock%}

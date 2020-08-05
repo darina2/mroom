@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {%block head%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%if title%}
+    <title>{{title}} - MRoom</title>
+    {%else%}
+    <title>MRoom</title>
+    {%endif%}
+    {%endblock%}
+</head>
+<body>
+{%block menu%}
+<ul>
+    <li><a href='{{url_for(".index")}}'>Home</a></li>
+    <li><a href='login'>Login</a></li>
+    <li><a href='{{url_for("movies.index")}}'>Movies</a></li>
+</ul>
+{%endblock%}
+
+
+    {%block body%}
+    <h1>Вітаємо на нашій головній сторінці!</h1>
+
+    {%endblock%}
+</body>
+</html>
