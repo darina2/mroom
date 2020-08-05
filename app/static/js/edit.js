@@ -7,15 +7,11 @@ function Edit(elm) {
         type: 'POST',
         success: function(res) {
             console.log(res);
-            alert('success!')
-            alert(status)
-            alert(res)
+            
         },
         error: function(error) {
             console.log(error);
-            alert('nit success!')
-            alert(status)
-            alert(error)
+           
         }
     });
 }
